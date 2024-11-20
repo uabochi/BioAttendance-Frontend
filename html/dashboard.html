@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="/assets/logo-white.png" alt="Company Logo"> 
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/html/dashboard.html">Dashboard</a></li>
+          <li><a href="attendance.html">Mark Attendance</a></li>
+          <li><a href="addStaff.html">Add Staff</a></li>
+          <li><a href="deleteStaff.html">Delete Staff</a></li>
+          <li><a href="viewAllStaff.html">View All Staff</a></li>
+          <li><a href="logout.html" class="logout">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>Welcome, <span id="adminName">Admin</span></h1>
+      <p>Manage staff attendance and other tasks here.</p>
+
+      <section class="attendance-section">
+        <h2>Mark Staff Attendance</h2>
+        <p>Quickly mark attendance for staff members.</p>
+        <a href="attendance.html" class="button">Go to Mark Attendance</a>
+      </section>
+
+      <section class="staff-management">
+        <h2>Staff Management</h2>
+        <div class="management-options">
+          <div class="option">
+            <h3>Add New Staff</h3>
+            <p>Add new staff members to the system.</p>
+            <a href="addStaff.html" class="button">Add Staff</a>
+          </div>
+
+          <div class="option">
+            <h3>Delete Staff</h3>
+            <p>Remove staff members from the system.</p>
+            <a href="deleteStaff.html" class="button">Delete Staff</a>
+          </div>
+
+          <div class="option">
+            <h3>View All Staff</h3>
+            <p>View the complete list of all staff members.</p>
+            <a href="viewAllStaff.html" class="button">View Staff</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 recordem. All rights reserved.</p>
+  </footer>
+
+  <script src="/js/dashboard.js"></script>
+  <script src="/js/apiUtils.js"></script>
+
+  <script>
+    // This script should fetch the admin's name dynamically from the backend and display it
+    document.addEventListener('DOMContentLoaded', function() {
+      // Assuming the backend provides the admin's name
+      const adminName = "ADMIN"; // Replace with dynamic name from API if available
+      document.getElementById('adminName').textContent = adminName;
+    });
+  </script>
+</body>
+</html>

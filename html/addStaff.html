@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Staff</title>
+  <link rel="stylesheet" href="/css/add-staff.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Add New Staff</h1>
+    </div>
+  </header>
+
+  <main>
+    <div class="form-container">
+      <form id="addStaffForm">
+        <label for="staffName">Name</label>
+        <input type="text" id="staffName" name="staffName" required>
+
+        <label for="staffEmail">Email</label>
+        <input type="email" id="staffEmail" name="staffEmail" required>
+
+        <button type="submit">Add Staff</button>
+      </form>
+      <div id="addStaffMessage"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 TaskMaster. All rights reserved.</p>
+  </footer>
+
+  <script src="/js/apiUtils.js"></script>
+  <script src="/js/add-staff.js"></script>
+</body>
+</html>

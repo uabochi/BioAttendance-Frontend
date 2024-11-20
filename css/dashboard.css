@@ -1,0 +1,124 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header .logo img {
+  height: 50px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+main .container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  color: #343a40;
+}
+
+#adminName {
+  font-weight: bold;
+  color: #007bff;
+}
+
+section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  color: #007bff;
+}
+
+.management-options {
+  display: flex;
+  gap: 20px;
+}
+
+.option {
+  flex: 1;
+  background: #f8f9fa;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.option h3 {
+  margin-bottom: 10px;
+  color: #343a40;
+}
+
+.option p {
+  margin-bottom: 15px;
+}
+
+.button {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.logout {
+  background-color: red;
+}
+
+.logout:hover {
+  background-color: darkred;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #343a40;
+  color: white;
+}

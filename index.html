@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style>
+    /* Basic CSS for the page */
+    body, html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f4f4;
+    }
+
+    /* Logo container */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Logo animation */
+    .logo {
+      width: 150px;
+      height: 150px;
+      animation: bounce 1.5s infinite alternate;
+    }
+
+    /* Bounce animation for logo */
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-30px);
+      }
+    }
+
+    /* FadeIn animation for the logo container */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="logo-container">
+    <img src="/assets/logo-blue.png" alt="Company Logo" class="logo">
+  </div>
+
+  <script>
+    // Wait for 6 seconds before redirecting to the login page
+    setTimeout(() => {
+      window.location.href = '/html/login.html'; // Redirect to the login page
+    }, 6000); // 6 seconds delay
+  </script>
+  
+</body>
+</html>

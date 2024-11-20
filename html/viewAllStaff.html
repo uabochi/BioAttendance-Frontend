@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View All Staff</title>
+  <link rel="stylesheet" href="/css/viewAllStaff.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>All Staff Members</h1>
+    </div>
+  </header>
+
+  <main>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody id="staffTableBody">
+          <!-- Staff rows will be appended here dynamically -->
+        </tbody>
+      </table>
+      <div id="viewStaffMessage"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 TaskMaster. All rights reserved.</p>
+  </footer>
+
+  <script src="/js/viewAllStaff.js"></script>
+  <script src="/js/apiUtils.js"></script>
+</body>
+</html>
