@@ -1,4 +1,5 @@
-const BASE_URL = 'https://bioattendance-backend.onrender.com'; // Backend base URL
+//const BASE_URL = 'https://bioattendance-backend.onrender.com'; // Backend base URL
+const BASE_URL = 'http://localhost:5000';
 
 // Function to handle POST requests for admin login
 async function loginAdmin(email, pin) {

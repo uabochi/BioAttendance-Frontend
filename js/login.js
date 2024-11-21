@@ -18,10 +18,18 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     // Call login function from apiUtils.js
     try {
       const data = await loginAdmin(email, pin);
-      console.log("almost there");
 
-      console.log('Login successful:', data);
-      window.location.href = '/html/dashboard.html'; // Redirect to dashboard
+      console.log('Login successful: ', data.token);
+
+      localStorage.setItem("adminName", data.name);
+
+      loginMessage.style.color = 'green';
+      loginMessage.textContent = 'Login successful!';
+
+      setTimeout(() => {
+        window.location.href = '/html/dashboard.html'; // Redirect to dashboard 
+      }, 1000);     
+      
     } catch (error) {
       errorMessageElement.textContent = error.message || 'Login failed. Please try again.';
     }

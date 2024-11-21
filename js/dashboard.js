@@ -1,4 +1,11 @@
-// document.getElementById('attendanceForm').addEventListener('submit', async function (e) {
+adminName = localStorage.getItem("adminName");
+
+document.getElementById('adminName').textContent = adminName;
+
+
+
+
+// document.getElementById('attendanceForm').addEventListener('submit', async function (e) 
 //     e.preventDefault(); // Prevent the form from submitting normally
   
 //     const staffId = document.getElementById('staffId').value;
