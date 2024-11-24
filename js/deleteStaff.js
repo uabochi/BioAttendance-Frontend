@@ -14,11 +14,11 @@ document.getElementById("deleteStaffForm").addEventListener("submit", async (e) 
       const data = await response.json();
   
       if (response.ok) {
-        messageElement.textContent = "Staff deleted successfully!";
+        messageElement.textContent = "Student deleted successfully!";
         messageElement.style.color = "green";
         document.getElementById("deleteStaffForm").reset();
       } else {
-        throw new Error(data.error || "Failed to delete staff.");
+        throw new Error(data.error || "Failed to delete student.");
       }
     } catch (error) {
       messageElement.textContent = error.message;

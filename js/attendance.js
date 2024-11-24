@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!staffId) {
       attendanceMessage.style.color = 'red';
-      attendanceMessage.textContent = 'Staff ID is required!';
+      attendanceMessage.textContent = 'Student ID is required!';
       return;
     }
 

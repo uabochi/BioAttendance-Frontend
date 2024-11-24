@@ -19,11 +19,11 @@ document.getElementById("addStaffForm").addEventListener("submit", async (e) => 
     const data = await response.json();
 
     if (response.ok) {
-      messageElement.textContent = "Staff added successfully!";
+      messageElement.textContent = "Student added successfully!";
       messageElement.style.color = "green";
       document.getElementById("addStaffForm").reset(); // Clear form inputs
     } else {
-      throw new Error(data.error || "Failed to add staff.");
+      throw new Error(data.error || "Failed to add student.");
     }
   } catch (error) {
     messageElement.textContent = error.message;

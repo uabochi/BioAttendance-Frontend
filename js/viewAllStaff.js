@@ -11,7 +11,7 @@ async function fetchAllStaff() {
   
       if (response.ok) {
         if (data.length === 0) {
-          messageElement.textContent = "No staff found.";
+          messageElement.textContent = "No student found.";
           messageElement.style.color = "orange";
         } else {
           data.forEach((staff) => {
@@ -25,7 +25,7 @@ async function fetchAllStaff() {
           });
         }
       } else {
-        throw new Error(data.error || "Failed to fetch staff.");
+        throw new Error(data.error || "Failed to fetch student.");
       }
     } catch (error) {
       messageElement.textContent = error.message;

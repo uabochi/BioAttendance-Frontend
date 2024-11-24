@@ -14,7 +14,7 @@ document.getElementById('recordsForm').addEventListener('submit', async function
       const records = await getAttendanceRecords(staffId); // Call API function
   
       if (records.length === 0) {
-        recordsMessage.textContent = 'No attendance records found for this Staff ID.';
+        recordsMessage.textContent = 'No attendance records found for this Student ID.';
         return;
       }
   
