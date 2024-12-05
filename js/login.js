@@ -22,6 +22,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
       console.log('Login successful: ', data.token);
 
       localStorage.setItem("adminName", data.name);
+      localStorage.setItem("adminId", data.id);
 
       loginMessage.style.color = 'green';
       loginMessage.textContent = 'Login successful!';

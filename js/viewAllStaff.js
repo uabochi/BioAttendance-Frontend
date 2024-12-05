@@ -6,7 +6,7 @@ async function fetchAllStaff() {
     messageElement.textContent = ""; // Clear message
   
     try {
-      const response = await fetch(`${BASE_URL}/staff`);
+      const response = await fetch(`${BASE_URL}/student`);
       const data = await response.json();
   
       if (response.ok) {
