@@ -21,11 +21,16 @@ document.getElementById("addStaffForm").addEventListener("submit", async (e) => 
     });
 
     const data = await response.json();
+    console.log(data);
 
     if (response.ok) {
+      const id = data.result.insertId;
+      console.log("id: " + id);
+      
       messageElement.textContent = "Student added successfully!";
       messageElement.style.color = "green";
       document.getElementById("addStaffForm").reset(); // Clear form inputs
+      sendMail({name, email, id})
     } else {
       throw new Error(data.error || "Failed to add student.");
     }
@@ -34,3 +39,13 @@ document.getElementById("addStaffForm").addEventListener("submit", async (e) => 
     messageElement.style.color = "red";
   }
 });
+
+// Send Mail
+async function sendMail(studentData) {
+  const response = await fetch(`${BASE_URL}/mail/send`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(studentData),
+  });
+  return response.ok ? await response.json() : Promise.reject(await response.json());
+}

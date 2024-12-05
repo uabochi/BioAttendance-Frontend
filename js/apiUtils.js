@@ -1,5 +1,5 @@
-//const BASE_URL = 'https://bioattendance-backend.onrender.com'; // Backend base URL
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'https://bioattendance-backend.onrender.com'; // Backend base URL
+// const BASE_URL = 'http://localhost:5000';
 
 // Function to handle POST requests for admin login
 async function loginAdmin(email, pin) {
@@ -93,7 +93,15 @@ async function deleteStaff(id) {
     return response.ok ? await response.json() : Promise.reject(await response.json());
 }
 
-
+// Send Mail
+async function sendMail(studentData) {
+    const response = await fetch(`${BASE_URL}/mail/send`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(studentData),
+    });
+    return response.ok ? await response.json() : Promise.reject(await response.json());
+}
 
 // Function to update the biometric template for a staff member
 async function updateBiometricTemplate(staffId, biometricData) {
