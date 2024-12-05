@@ -7,7 +7,7 @@ document.getElementById("deleteStaffForm").addEventListener("submit", async (e) 
     messageElement.textContent = ""; // Clear any previous message
   
     try {
-      const response = await fetch(`${BASE_URL}/staff/delete/${staffId}`, {
+      const response = await fetch(`${BASE_URL}/student/delete/${staffId}`, {
         method: "DELETE",
       });
   

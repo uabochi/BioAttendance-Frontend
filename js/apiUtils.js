@@ -71,7 +71,7 @@ async function getAttendanceRecords(userId) {
 
 // Add new staff
 async function addStaff(staffData) {
-    const response = await fetch(`${BASE_URL}/staff/add`, {
+    const response = await fetch(`${BASE_URL}/student/add`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(staffData),
@@ -81,13 +81,13 @@ async function addStaff(staffData) {
 
 // Get all staff
 async function getAllStaff() {
-    const response = await fetch(`${BASE_URL}/staff`);
+    const response = await fetch(`${BASE_URL}/student`);
     return response.ok ? await response.json() : Promise.reject(await response.json());
 }
 
 // Delete staff by ID
 async function deleteStaff(id) {
-    const response = await fetch(`${BASE_URL}/staff/delete/${id}`, {
+    const response = await fetch(`${BASE_URL}/student/delete/${id}`, {
         method: 'DELETE',
     });
     return response.ok ? await response.json() : Promise.reject(await response.json());

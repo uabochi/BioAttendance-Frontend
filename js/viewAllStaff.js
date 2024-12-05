@@ -1,3 +1,5 @@
+adminId = localStorage.getItem("adminId");
+
 async function fetchAllStaff() {
     const tableBody = document.getElementById("staffTableBody");
     const messageElement = document.getElementById("viewStaffMessage");
@@ -6,7 +8,8 @@ async function fetchAllStaff() {
     messageElement.textContent = ""; // Clear message
   
     try {
-      const response = await fetch(`${BASE_URL}/student`);
+      // const response = await fetch(`${BASE_URL}/student`);
+      const response = await fetch(`${BASE_URL}/student/${adminId}`);
       const data = await response.json();
   
       if (response.ok) {
