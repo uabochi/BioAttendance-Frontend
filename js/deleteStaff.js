@@ -7,22 +7,21 @@ document.getElementById("deleteStaffForm").addEventListener("submit", async (e) 
     messageElement.textContent = ""; // Clear any previous message
   
     try {
-      const response = await fetch(`${BASE_URL}/student/delete/${staffId}`, {
-        method: "DELETE",
-      });
+      const response = await deleteStaff(staffId); // Use the function from apiUtil.js
   
-      const data = await response.json();
+      console.log("API Response:", response); // Debugging log
   
-      if (response.ok) {
-        messageElement.textContent = "Student deleted successfully!";
-        messageElement.style.color = "green";
-        document.getElementById("deleteStaffForm").reset();
-      } else {
-        throw new Error(data.error || "Failed to delete student.");
-      }
-    } catch (error) {
-      messageElement.textContent = error.message;
+      // Handle success
+      messageElement.textContent = "Student deleted successfully!";
+      messageElement.style.color = "green";
+      document.getElementById("deleteStaffForm").reset(); // Clear the form
+  } catch (error) {
+      console.error("Caught Error:", error); // Debugging log
+  
+      // Handle errors
+      messageElement.textContent = error.error || "Failed to delete student.";
       messageElement.style.color = "red";
-    }
+  }
+  
   });
   

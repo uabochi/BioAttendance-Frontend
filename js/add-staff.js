@@ -12,40 +12,26 @@ document.getElementById("addStaffForm").addEventListener("submit", async (e) => 
   messageElement.textContent = ""; // Clear any previous message
 
   try {
-    const response = await fetch(`${BASE_URL}/student/add`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, email, created_by }),
-    });
+    const response = await addStaff({ name, email, created_by }); // Call addStaff function
 
-    const data = await response.json();
-    console.log(data);
+    console.log("API Response:", response); // Log response for debugging
 
-    if (response.ok) {
-      const id = data.result.insertId;
-      console.log("id: " + id);
-      
-      messageElement.textContent = "Student added successfully!";
-      messageElement.style.color = "green";
-      document.getElementById("addStaffForm").reset(); // Clear form inputs
-      sendMail({name, email, id})
+    if (response.success) { // Check `success` field, not `response.ok`
+        const id = response.result.insertId;
+        console.log("id: " + id);
+
+        messageElement.textContent = "Student added successfully!";
+        messageElement.style.color = "green";
+        document.getElementById("addStaffForm").reset(); // Clear form inputs
+
+        // Send email with details
+        sendMail({ name, email, id });
     } else {
-      throw new Error(data.error || "Failed to add student.");
+        throw new Error(response.message || "Failed to add student."); // Use `response.message`
     }
-  } catch (error) {
-    messageElement.textContent = error.message;
+} catch (error) {
+    console.error("Caught Error:", error); // Log error for debugging
+    messageElement.textContent = error.message || "An unexpected error occurred.";
     messageElement.style.color = "red";
-  }
-});
-
-// Send Mail
-async function sendMail(studentData) {
-  const response = await fetch(`${BASE_URL}/mail/send`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(studentData),
-  });
-  return response.ok ? await response.json() : Promise.reject(await response.json());
 }
+});
